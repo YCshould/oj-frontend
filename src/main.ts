@@ -7,12 +7,13 @@ import store from "./store";
 import "@/plugins/axios";
 import "@/access";
 import "bytemd/dist/index.css";
+import ArcoVueIcon from "@arco-design/web-vue/es/icon";
 
 // 创建应用实例
 const app = createApp(App);
 
 // 使用插件
-app.use(ArcoVue).use(store).use(router);
+app.use(ArcoVue).use(store).use(router).use(ArcoVueIcon);
 
 // 在挂载前先获取用户信息
 store.dispatch("user/getLoginUser").finally(() => {
